@@ -6,7 +6,9 @@ interface ByeProps {
 }
 
 export const Bye: React.FC<ByeProps> = ({}) => {
-  const { data,loading, error } = useByeQuery()
+  const { data,loading, error } = useByeQuery({
+    fetchPolicy: 'network-only'
+  })
 
   if (loading){
     return <div>Loading...</div>
