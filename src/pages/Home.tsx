@@ -7,7 +7,11 @@ interface HomeProps {
 }
 
 export const Home: React.FC<HomeProps> = ({}) => {
-  const {data,} = useUsersQuery({ fetchPolicy: 'network-only' }); // maketo the server everytime
+  const {data,error} = useUsersQuery({ fetchPolicy: 'network-only' }); // maketo the server everytime
+  if (!error){
+    console.log(error);
+    return null;
+  }
   if (!data) {
     return <div>Loading...</div>
   }

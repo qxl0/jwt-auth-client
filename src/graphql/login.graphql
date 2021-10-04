@@ -1,5 +1,9 @@
 mutation Login($loginPassword: String!, $loginEmail: String!) {
   login(password: $loginPassword, email: $loginEmail) {
-    accessToken
+    accessToken,
+    user{
+      id
+      email
+    }
   }
 }

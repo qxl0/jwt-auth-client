@@ -7,3 +7,4 @@ export const setAccessToken = (token: string) => {
 export const getAccessToken = () => {
   return accessToken;
 }
+

@@ -14,6 +14,9 @@ export const App: React.FC = ({}) => {
       const {accessToken} = await x.json();
       setAccessToken(accessToken);
       setLoading(false);
+      }).catch(err => {
+        console.log(err);
+        setLoading(false);
       });
     }, [])
 
